@@ -1,0 +1,21 @@
+# Task configurations for CrewAI
+#
+# NOTE: This file exists for CrewBase compatibility but is NOT actively used.
+# Tasks are created dynamically in the code with batch-specific parameters.
+#
+# This minimal configuration is kept for CrewBase decorator requirements.
+
+# Placeholder task (not used)
+placeholder_task:
+  description: "Placeholder task for CrewBase compatibility. Actual tasks created dynamically."
+  expected_output: "This task is not used."
+
+templates:
+  default:
+    human_input: false
+
+  search_task:
+    human_input: false
+
+  analysis_task:
+    human_input: false

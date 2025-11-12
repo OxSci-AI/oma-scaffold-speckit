@@ -1,0 +1,33 @@
+# Agent configurations for CrewAI
+#
+# NOTE: This file exists for CrewAI compatibility but is NOT actively used.
+# Agents are created dynamically in the code with custom roles and backstories.
+#
+# This minimal configuration is kept for CrewBase decorator requirements.
+
+# Placeholder agent (not used)
+placeholder_agent:
+  role: "Placeholder"
+  goal: "Placeholder agent for CrewAI compatibility"
+  backstory: "This agent is not used. Actual agents are created dynamically in code."
+  verbose: true
+  max_iter: 1
+  allow_delegation: false
+
+templates:
+  default:
+    verbose: true
+    allow_delegation: false
+    max_iter: 8
+
+  research_agent:
+    verbose: true
+    allow_delegation: false
+    max_iter: 10
+    temperature: 0.3
+
+  analysis_agent:
+    verbose: true
+    allow_delegation: false
+    max_iter: 8
+    temperature: 0.3

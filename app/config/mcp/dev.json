@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "mcp-article-processing": {
+      "enabled": true,
+      "proxy": true
+    },
+    "journal-insight-service": {
+      "enabled": true,
+      "proxy": true
+    }
+  }
+}
