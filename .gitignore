@@ -55,3 +55,7 @@ Thumbs.db
 
 .specify/
 .claude/
+docs/
+
+# Independent repositories
+oma-paper-analysis/
