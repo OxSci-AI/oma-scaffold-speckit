@@ -29,9 +29,9 @@ This task list provides a dependency-ordered breakdown of all implementation tas
 
 - [X] T001 Verify oxsci-oma-core >= 0.3.3 and oxsci-shared-core >= 0.5.0 are installed via poetry
 - [X] T002 Authenticate with AWS CodeArtifact by running ./entrypoint-dev.sh to enable private package access
-- [X] T003 Verify existing pdf_parser agent is functional by reviewing `D:\Project\oxsci-manuscript-service-speckit\app\agents\pdf_parser.py`
+- [X] T003 Verify existing pdf_parser agent is functional by reviewing `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\agents\pdf_parser.py`
 - [X] T004 Create feature development branch `002-paper-analysis-agent` from main
-- [X] T005 Verify test data samples exist: `D:\Project\oxsci-manuscript-service-speckit\tests\sample\sample.pdf` and `sample_parsed.json`
+- [X] T005 Verify test data samples exist: `D:\Project\oma-scaffold-speckit\oma-paper-analysis\tests\sample\sample.pdf` and `sample_parsed.json`
 
 **Exit Criteria**: Development environment configured, dependencies verified, feature branch created, prerequisite pdf_parser agent confirmed functional.
 
@@ -43,16 +43,16 @@ This task list provides a dependency-ordered breakdown of all implementation tas
 
 **Tasks**:
 
-- [X] T006 Implement ResearchTopic model in `D:\Project\oxsci-manuscript-service-speckit\app\utility\data_models.py` with fields: primary_discipline, sub_disciplines, keywords, technical_terms
-- [X] T007 Implement MethodologyProfile model in `D:\Project\oxsci-manuscript-service-speckit\app\utility\data_models.py` with fields: experimental_design, data_collection, analytical_techniques, tools_and_instruments, methodology_keywords
-- [X] T008 Implement KeyFinding model in `D:\Project\oxsci-manuscript-service-speckit\app\utility\data_models.py` with fields: finding_text, significance, outcome_type (enum validation)
-- [X] T009 Implement CitedJournal model in `D:\Project\oxsci-manuscript-service-speckit\app\utility\data_models.py` with fields: journal_name, citation_count (>=1), fields_covered
-- [X] T010 Implement CitationProfile model in `D:\Project\oxsci-manuscript-service-speckit\app\utility\data_models.py` with fields: total_references, cited_journals (list), citation_fields
-- [X] T011 Implement ArticleClassification model in `D:\Project\oxsci-manuscript-service-speckit\app\utility\data_models.py` with fields: article_type (enum), confidence_score (0.0-1.0), target_audience_breadth (enum), application_domains, regional_focus
-- [X] T012 Implement PaperAnalysisResult model in `D:\Project\oxsci-manuscript-service-speckit\app\utility\data_models.py` aggregating all analysis components with metadata fields
-- [X] T013 Implement PaperAnalysisInput model in `D:\Project\oxsci-manuscript-service-speckit\app\utility\data_models.py` with fields: file_id (UUID), manuscript_id, user_id
-- [X] T014 Implement PaperAnalysisOutput model in `D:\Project\oxsci-manuscript-service-speckit\app\utility\data_models.py` with fields: status (enum), result (dict)
-- [X] T015 Implement intermediate output models (ContentAnalysisOutput, CitationAnalysisOutput, ClassificationOutput, SummaryOutput) in `D:\Project\oxsci-manuscript-service-speckit\app\utility\data_models.py`
+- [X] T006 Implement ResearchTopic model in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\utility\data_models.py` with fields: primary_discipline, sub_disciplines, keywords, technical_terms
+- [X] T007 Implement MethodologyProfile model in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\utility\data_models.py` with fields: experimental_design, data_collection, analytical_techniques, tools_and_instruments, methodology_keywords
+- [X] T008 Implement KeyFinding model in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\utility\data_models.py` with fields: finding_text, significance, outcome_type (enum validation)
+- [X] T009 Implement CitedJournal model in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\utility\data_models.py` with fields: journal_name, citation_count (>=1), fields_covered
+- [X] T010 Implement CitationProfile model in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\utility\data_models.py` with fields: total_references, cited_journals (list), citation_fields
+- [X] T011 Implement ArticleClassification model in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\utility\data_models.py` with fields: article_type (enum), confidence_score (0.0-1.0), target_audience_breadth (enum), application_domains, regional_focus
+- [X] T012 Implement PaperAnalysisResult model in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\utility\data_models.py` aggregating all analysis components with metadata fields
+- [X] T013 Implement PaperAnalysisInput model in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\utility\data_models.py` with fields: file_id (UUID), manuscript_id, user_id
+- [X] T014 Implement PaperAnalysisOutput model in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\utility\data_models.py` with fields: status (enum), result (dict)
+- [X] T015 Implement intermediate output models (ContentAnalysisOutput, CitationAnalysisOutput, ClassificationOutput, SummaryOutput) in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\utility\data_models.py`
 - [X] T016 Add Pydantic validation rules: UUID format validation, enum constraints, confidence_score bounds (0.0-1.0), non-empty required fields
 - [X] T017 Add model_dump() and model_validate() usage examples in docstrings for all models
 
@@ -68,15 +68,15 @@ This task list provides a dependency-ordered breakdown of all implementation tas
 
 **Tasks**:
 
-- [X] T018 [P] Define Content Analyzer Agent in `D:\Project\oxsci-manuscript-service-speckit\app\config\agents.yaml` with role, goal, backstory, and tools list
-- [X] T019 [P] Define Methodology Extractor Agent in `D:\Project\oxsci-manuscript-service-speckit\app\config\agents.yaml` with role, goal, backstory, and tools list
-- [X] T020 [P] Define Findings Analyzer Agent in `D:\Project\oxsci-manuscript-service-speckit\app\config\agents.yaml` with role, goal, backstory, and tools list
-- [X] T021 [P] Define Citation Processor Agent in `D:\Project\oxsci-manuscript-service-speckit\app\config\agents.yaml` with role, goal, backstory, and tools list
-- [X] T022 [P] Define Summary Generator Agent in `D:\Project\oxsci-manuscript-service-speckit\app\config\agents.yaml` with role, goal, backstory, and tools list
-- [X] T023 Define content_analysis_task in `D:\Project\oxsci-manuscript-service-speckit\app\config\tasks.yaml` with description, expected_output (ResearchTopic + MethodologyProfile), and agent assignment
-- [X] T024 Define citation_analysis_task in `D:\Project\oxsci-manuscript-service-speckit\app\config\tasks.yaml` with description, expected_output (CitationProfile), and agent assignment
-- [X] T025 Define classification_task in `D:\Project\oxsci-manuscript-service-speckit\app\config\tasks.yaml` with description, expected_output (ArticleClassification), and agent assignment
-- [X] T026 Define summary_generation_task in `D:\Project\oxsci-manuscript-service-speckit\app\config\tasks.yaml` with description, expected_output (analysis_summary string), and agent assignment
+- [X] T018 [P] Define Content Analyzer Agent in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\config\agents.yaml` with role, goal, backstory, and tools list
+- [X] T019 [P] Define Methodology Extractor Agent in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\config\agents.yaml` with role, goal, backstory, and tools list
+- [X] T020 [P] Define Findings Analyzer Agent in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\config\agents.yaml` with role, goal, backstory, and tools list
+- [X] T021 [P] Define Citation Processor Agent in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\config\agents.yaml` with role, goal, backstory, and tools list
+- [X] T022 [P] Define Summary Generator Agent in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\config\agents.yaml` with role, goal, backstory, and tools list
+- [X] T023 Define content_analysis_task in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\config\tasks.yaml` with description, expected_output (ResearchTopic + MethodologyProfile), and agent assignment
+- [X] T024 Define citation_analysis_task in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\config\tasks.yaml` with description, expected_output (CitationProfile), and agent assignment
+- [X] T025 Define classification_task in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\config\tasks.yaml` with description, expected_output (ArticleClassification), and agent assignment
+- [X] T026 Define summary_generation_task in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\config\tasks.yaml` with description, expected_output (analysis_summary string), and agent assignment
 - [X] T027 Add explicit MANDATORY WORKFLOW instructions to all agent backstories: numbered steps, tool call commands, PURE JSON output requirements
 - [X] T028 Add FORBIDDEN BEHAVIORS section to all agent backstories: no explanatory text, no assumptions, no empty defaults
 
@@ -92,14 +92,14 @@ This task list provides a dependency-ordered breakdown of all implementation tas
 
 **Tasks**:
 
-- [X] T029 [US1] Create PaperAnalysisAgent class in `D:\Project\oxsci-manuscript-service-speckit\app\agents\paper_analysis_agent.py` with @CrewBase decorator and ITaskExecutor interface signature
+- [X] T029 [US1] Create PaperAnalysisAgent class in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\agents\paper_analysis_agent.py` with @CrewBase decorator and ITaskExecutor interface signature
 - [X] T030 [US1] Implement __init__(self, context: OMAContext, adapter: IAdapter) with context storage, adapter storage, and LLM instance creation
 - [X] T031 [US1] Implement get_agent_config() class method returning AgentConfig with agent_id="paper_analysis_agent_v1", timeout=600, input/output schemas, estimated_tools_cnt=8
 - [X] T032 [US1] Implement _create_llm_instance() method using adapter.create_llm() with model="openrouter/openai/gpt-4o-mini", temperature=0.3, timeout=300
 - [X] T033 [US1] Implement _execute_pdf_parser() method to call pdf_parser agent via context, retrieve structured_content_overview_id from shared_context, validate output exists
-- [X] T034 [US1] Create GetStructuredSections custom tool in `D:\Project\oxsci-manuscript-service-speckit\app\tools\manuscript_analysis_tools.py` inheriting BaseReadTool to retrieve parsed sections by section_type from database
-- [X] T035 [US1] Create CreatePaperAnalysis custom tool in `D:\Project\oxsci-manuscript-service-speckit\app\tools\manuscript_analysis_tools.py` inheriting BaseWriteTool to persist PaperAnalysisResult to database and return paper_analysis_result_id
-- [X] T036 [US1] Create CompletePaperAnalysis custom tool in `D:\Project\oxsci-manuscript-service-speckit\app\tools\manuscript_analysis_tools.py` inheriting BaseWriteTool to mark analysis as complete with timestamp
+- [X] T034 [US1] Create GetStructuredSections custom tool in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\tools\manuscript_analysis_tools.py` inheriting BaseReadTool to retrieve parsed sections by section_type from database
+- [X] T035 [US1] Create CreatePaperAnalysis custom tool in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\tools\manuscript_analysis_tools.py` inheriting BaseWriteTool to persist PaperAnalysisResult to database and return paper_analysis_result_id
+- [X] T036 [US1] Create CompletePaperAnalysis custom tool in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\tools\manuscript_analysis_tools.py` inheriting BaseWriteTool to mark analysis as complete with timestamp
 - [X] T037 [US1] Register custom tools in __init__ using tool_registry.register_custom_tool() for GetStructuredSections, CreatePaperAnalysis, CompletePaperAnalysis
 - [X] T038 [US1] Implement content_analyzer() agent method using @agent decorator loading from agents.yaml, passing llm and tools=[GetStructuredSections]
 - [X] T039 [US1] Implement methodology_extractor() agent method using @agent decorator loading from agents.yaml, passing llm and tools=[GetStructuredSections]
@@ -176,11 +176,11 @@ This task list provides a dependency-ordered breakdown of all implementation tas
 
 **Tasks**:
 
-- [X] T074 Import PaperAnalysisAgent in `D:\Project\oxsci-manuscript-service-speckit\app\agents\__init__.py` for module visibility
-- [X] T075 Add PaperAnalysisAgent to agent_executors list in `D:\Project\oxsci-manuscript-service-speckit\app\core\main.py` after PdfParser
+- [X] T074 Import PaperAnalysisAgent in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\agents\__init__.py` for module visibility
+- [X] T075 Add PaperAnalysisAgent to agent_executors list in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\core\main.py` after PdfParser
 - [X] T076 Verify ServiceRegistration logic in main.py calls register_agent() for PaperAnalysisAgent with correct AgentConfig
 - [X] T077 Verify TaskScheduler initialization in main.py for PaperAnalysisAgent with executor_class, adapter_class=CrewAIToolAdapter, interval=10
-- [X] T078 Add health check endpoint verification in `D:\Project\oxsci-manuscript-service-speckit\app\core\main.py` to list registered agents including paper_analysis_agent
+- [X] T078 Add health check endpoint verification in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\core\main.py` to list registered agents including paper_analysis_agent
 - [X] T079 Test agent registration by starting service on port 8080 and verifying startup logs show "Registering agent: paper_analysis_agent"
 - [X] T080 Test task polling by creating test task via orchestrator and verifying agent picks up and processes task
 
@@ -196,7 +196,7 @@ This task list provides a dependency-ordered breakdown of all implementation tas
 
 **Tasks**:
 
-- [X] T081 Add PaperAnalysisAgent import in `D:\Project\oxsci-manuscript-service-speckit\tests\test_agents.py` after existing imports: `from app.agents.paper_analysis_agent import PaperAnalysisAgent`
+- [X] T081 Add PaperAnalysisAgent import in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\tests\test_agents.py` after existing imports: `from app.agents.paper_analysis_agent import PaperAnalysisAgent`
 - [X] T082 Define @agent_test decorator function test_paper_analysis_agent() that returns PaperAnalysisAgent, with sample_pdf="sample/sample.pdf" and verbose="stdout"
 - [X] T083 Define @agent_test decorator function test_paper_analysis_large() that returns PaperAnalysisAgent, with sample_pdf="sample/sample-large.pdf" and verbose="stdout"
 - [X] T084 Update test_map dictionary in main() function to register new tests: `"paper_analysis": test_paper_analysis_agent, "paper_analysis_large": test_paper_analysis_large`
@@ -224,8 +224,8 @@ This task list provides a dependency-ordered breakdown of all implementation tas
 **Tasks**:
 
 - [ ] T095 [P] Update README.md with Paper Analysis Agent description, capabilities, input/output specifications, and integrate quickstart guide content (setup, testing steps, usage examples, performance benchmarks)
-- [ ] T096 [P] Document custom tools in `D:\Project\oxsci-manuscript-service-speckit\app\tools\README.md`: GetStructuredSections, CreatePaperAnalysis, CompletePaperAnalysis with usage examples
-- [ ] T097 [P] Add agent architecture diagram to `D:\Project\oxsci-manuscript-service-speckit\docs\agent_design\paper_analysis_agent_architecture.md` showing 5-agent sequential flow
+- [ ] T096 [P] Document custom tools in `D:\Project\oma-scaffold-speckit\oma-paper-analysis\app\tools\README.md`: GetStructuredSections, CreatePaperAnalysis, CompletePaperAnalysis with usage examples
+- [ ] T097 [P] Add agent architecture diagram to `D:\Project\oma-scaffold-speckit\oma-paper-analysis\docs\agent_design\paper_analysis_agent_architecture.md` showing 5-agent sequential flow
 - [ ] T098 Verify Dockerfile includes all dependencies: oxsci-oma-core >= 0.3.3, oxsci-shared-core >= 0.5.0, crewai, pydantic
 
 **Exit Criteria**: All documentation complete and accurate, README contains comprehensive setup and usage guide, Dockerfile validated.
@@ -400,3 +400,4 @@ Task T107 validates against all 8 principles:
 ---
 
 **END OF TASKS DOCUMENT**
+
