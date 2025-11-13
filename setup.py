@@ -66,6 +66,13 @@ def setup_service():
     print("=" * 70)
     print()
 
+    # Show where the service will be created
+    script_dir = Path(__file__).parent
+    parent_dir = script_dir.parent
+    print(f"Scaffold location: {script_dir}")
+    print(f"New service will be created in: {parent_dir}")
+    print()
+
     # Get service name
     print("Step 1: Service Configuration")
     print("-" * 70)
@@ -110,9 +117,8 @@ def setup_service():
     print("Step 4: Creating Project")
     print("-" * 70)
 
-    # Get script directory (scaffold template location)
-    script_dir = Path(__file__).parent
-    target_dir = Path.cwd() / folder_name
+    # Use parent_dir that was defined at the beginning of the function
+    target_dir = parent_dir / folder_name
 
     # Check if target directory already exists
     if target_dir.exists():

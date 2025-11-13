@@ -1,7 +1,8 @@
 {
   "servers": {
     "mcp-article-processing": {
-      "enabled": true
+      "enabled": true,
+      "proxy": true
     }
   }
 }

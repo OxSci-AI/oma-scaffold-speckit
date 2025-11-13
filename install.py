@@ -488,7 +488,21 @@ def setup_service(
     print("Step 4: Creating Project")
     print("-" * 70)
 
-    target_dir = Path.cwd() / folder_name
+    # Determine target parent directory
+    # If running from oma-scaffold directory itself, create in parent directory
+    # Otherwise, create in current directory (default behavior for downloaded script)
+    script_dir = Path(__file__).parent
+    if script_dir.name.startswith("oma-scaffold"):
+        # Running from local oma-scaffold directory, create in parent (sibling directory)
+        parent_dir = script_dir.parent
+        print(f"Detected local scaffold directory, creating in: {parent_dir}")
+    else:
+        # Running from downloaded script, use current working directory
+        parent_dir = Path.cwd()
+        print(f"Creating in current directory: {parent_dir}")
+    print()
+
+    target_dir = parent_dir / folder_name
 
     # Check if target directory already exists
     if target_dir.exists():
